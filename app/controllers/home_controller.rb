@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
-  def index 
-    render :text => "Welcome!"
+  def index
   end
+
 end
-  

@@ -1,0 +1,28 @@
+<% unless admin_signed_in? -%>
+    <p><%= link_to 'Sign in as Admin', new_admin_session_path %></p>
+<% end -%>
+<% unless user_signed_in? -%>
+    <p><%= link_to 'Sign in as User', new_user_session_path %></p>
+    <p><%= link_to 'Sign up as User', new_user_path %></p>
+<% end -%>
+
+<%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<%- end -%>
+
+<p><%= link_to 'Home', root_path %></p>
+
+<% if user_signed_in? -%>
+    <div id="user_login_box" style="float:right">
+      <%= current_user.email %> |
+      <%= link_to 'My info', edit_user_path %> |
+      <%= link_to 'Sign out', destroy_user_session_path %>
+    </div>
+<% end -%>
+<% if admin_signed_in? -%>
+    <div id="admin_login_box" style="float:left">
+      <%= current_admin.email %> |
+      <%= link_to 'Admin section', admins_path %> |
+      <%= link_to 'Sign out', destroy_admin_session_path %>
+    </div>
+<% end -%>

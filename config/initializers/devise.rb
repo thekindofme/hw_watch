@@ -7,7 +7,7 @@ Devise.setup do |config|
   # ==> Configuration for :authenticatable
   # Invoke `rake secret` and use the printed value to setup a pepper to generate
   # the encrypted password. By default no pepper is used.
-  # config.pepper = "rake secret output"
+  config.pepper = "rake secret output"
 
   # Configure how many times you want the password is reencrypted. Default is 10.
   # config.stretches = 10
@@ -42,16 +42,16 @@ Devise.setup do |config|
 
   # ==> Configuration for :lockable
   # Number of authentication tries before locking an account.
-  # config.maximum_attempts = 20
+  config.maximum_attempts = 10
 
   # Defines which strategy will be used to unlock an account.
   # :email = Sends an unlock link to the user email
   # :time  = Reanables login after a certain ammount of time (see :unlock_in below)
   # :both  = enables both strategies
-  # config.unlock_strategy = :both
+  config.unlock_strategy = :time
 
   # Time interval to unlock the account if :time is enabled as unlock_strategy.
-  # config.unlock_in = 1.hour
+  config.unlock_in = 1.hour
 
   # ==> General configuration
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper
