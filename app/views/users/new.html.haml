@@ -1,12 +1,13 @@
 %title 'Sign Up'
 
--form_for @user, :url => user_path do |f|
-  = f.error_messages
-  = f.label :email
-  = f.text_field :email
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
+#form-box
+  -form_for @user, :url => user_path do |f|
+    %p= f.error_messages
+    %p= f.label :email
+    %p= f.text_field :email
+    %p= f.label :password
+    %p= f.password_field :password
+    %p= f.label :password_confirmation
+    %p= f.password_field :password_confirmation
 
-  =f.submit "Sign Up"
+    %p=f.submit "Sign Up"

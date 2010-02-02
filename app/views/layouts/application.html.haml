@@ -11,32 +11,32 @@
   %body.three-col
     #container
       #header
-        Lankan Hardware Watch
+        %h1 Lankan Hardware Watch
       #sidebar
-        #navigation
+        #list.navigation
+          %li=link_to 'Home', root_path
           - unless admin_signed_in?
-            %p=link_to 'Sign in as Admin', new_admin_session_path
+            %li=link_to 'Sign in as Admin', new_admin_session_path
           - unless user_signed_in?
-            %p=link_to 'Sign in as User', new_user_session_path
-            %p=link_to 'Sign up as User', new_user_path
+            %li=link_to 'Sign in as User', new_user_session_path
+            %li=link_to 'Sign up as User', new_user_path
           - flash.each do |name, msg|
             -#%div[name, :flash_]
             %div{:id=> "flash_#{name}"}
               %p=msg
-          %p=link_to 'Home', root_path
           - if user_signed_in?
             #user_login_box
-              %p
+              %li
                 ="#{current_user.email} |"
                 ="#{link_to('My info', edit_user_path)} |"
                 =link_to('Sign out', destroy_user_session_path)
           - if admin_signed_in?
             #admin_login_box
-              %p
+              %li
                 =current_admin.email +"|"
                 =link_to('Admin section', admins_path) +"|"
                 =link_to('Sign out', destroy_admin_session_path)
       #content
         = yield
       #footer
-        Lankan Hardware Watch @2010
+        %p Lankan Hardware Watch @2010
