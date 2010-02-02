@@ -3,13 +3,40 @@
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
   %head
     %meta{'http-equiv' => "content-type", :content => "text/html;charset=UTF-8"}
-    %title= @browser_title || 'Default Browser Title'
+    %title= @browser_title || 'Lankan Hardware Watch'
     = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'scaffold'
-  %body
+  %body.three-col
     #container
-      %h1 Welcome to Compass
-      = yield
+      #header
+        Lankan Hardware Watch
+      #sidebar
+        #navigation
+          - unless admin_signed_in?
+            %p=link_to 'Sign in as Admin', new_admin_session_path
+          - unless user_signed_in?
+            %p=link_to 'Sign in as User', new_user_session_path
+            %p=link_to 'Sign up as User', new_user_path
+          - flash.each do |name, msg|
+            -#%div[name, :flash_]
+            %div{:id=> "flash_#{name}"}
+              %p=msg
+          %p=link_to 'Home', root_path
+          - if user_signed_in?
+            #user_login_box
+              %p
+                ="#{current_user.email} |"
+                ="#{link_to('My info', edit_user_path)} |"
+                =link_to('Sign out', destroy_user_session_path)
+          - if admin_signed_in?
+            #admin_login_box
+              %p
+                =current_admin.email +"|"
+                =link_to('Admin section', admins_path) +"|"
+                =link_to('Sign out', destroy_admin_session_path)
+      #content
+        = yield
+      #footer
+        Lankan Hardware Watch @2010
