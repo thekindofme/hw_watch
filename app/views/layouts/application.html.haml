@@ -8,18 +8,21 @@
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
-  %body.three-col
+  %body
     #container
       #header
         %h1 Lankan Hardware Watch
+        %h2 Automated upto date price list generation for your latest wears and much more!
+      #content
+        = yield
       #sidebar
-        #list.navigation
+        %list#navigation
           %li=link_to 'Home', root_path
-          - unless admin_signed_in?
-            %li=link_to 'Sign in as Admin', new_admin_session_path
           - unless user_signed_in?
-            %li=link_to 'Sign in as User', new_user_session_path
-            %li=link_to 'Sign up as User', new_user_path
+            %li=link_to 'Log in', new_user_session_path
+            %li=link_to 'Sign up', new_user_path
+          - unless admin_signed_in?
+            %li=link_to 'Admin', new_admin_session_path
           - flash.each do |name, msg|
             -#%div[name, :flash_]
             %div{:id=> "flash_#{name}"}
@@ -36,7 +39,6 @@
                 =current_admin.email +"|"
                 =link_to('Admin section', admins_path) +"|"
                 =link_to('Sign out', destroy_admin_session_path)
-      #content
-        = yield
       #footer
+        %hr
         %p Lankan Hardware Watch @2010
