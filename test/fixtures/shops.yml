@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  address: MyString
+  tele1: MyString
+  tele2: MyString
+  rating: 
+  link: MyString
+
+two:
+  name: MyString
+  description: MyString
+  address: MyString
+  tele1: MyString
+  tele2: MyString
+  rating: 
+  link: MyString

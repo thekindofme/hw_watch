@@ -14,8 +14,18 @@
         %h1 Lankan Hardware Watch
         %h2 Automated upto date price list generation for your latest wears and much more!
       #content
-        = yield
+        -if flash.count > 0
+          #flash
+            - flash.each do |name, msg|
+              -#%div[name, :flash_]
+              %div{:id=> "flash_#{name}"}
+                %p=msg
+        #other
+          = yield
       #sidebar
+        -if user_signed_in?
+          %list
+            %li Logged in as #{current_user.email}
         %list#navigation
           %li=link_to 'Home', root_path
           - unless user_signed_in?
@@ -23,16 +33,10 @@
             %li=link_to 'Sign up', new_user_path
           - unless admin_signed_in?
             %li=link_to 'Admin', new_admin_session_path
-          - flash.each do |name, msg|
-            -#%div[name, :flash_]
-            %div{:id=> "flash_#{name}"}
-              %p=msg
           - if user_signed_in?
             #user_login_box
-              %li
-                ="#{current_user.email} |"
-                ="#{link_to('My info', edit_user_path)} |"
-                =link_to('Sign out', destroy_user_session_path)
+              %li=link_to('My info', edit_user_path)
+              %li=link_to('Sign out', destroy_user_session_path)
           - if admin_signed_in?
             #admin_login_box
               %li

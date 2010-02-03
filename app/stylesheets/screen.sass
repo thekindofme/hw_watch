@@ -23,6 +23,7 @@ html
 // Page layout can be done using mixins applied to your semantic classes and IDs:
 body
   +fancy-type
+  :background #ffffff url('/images/vga_card.jpg') no-repeat bottom right
   #container
     +container
   #header
@@ -81,6 +82,12 @@ body
     +column(18)
     :font-size 170%
     :padding-left 20px
+
+  #flash
+    :border 6px solid #E7E7DE
+    :background #F4F4EE none repeat scroll 0 0
+    :padding 5px
+
   #form-box
     //+blueprint-form
     //+blueprint-form-borders
