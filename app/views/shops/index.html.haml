@@ -1,0 +1,9 @@
+%h2 Shops Listing
+-if @shops.empty?
+  %p No shops found... something is wrong i guess?!
+-else
+  %p We have #{@shops.size} shop(s)
+  %div.shops
+    -@shops.each do |shop|
+      -@shop=shop
+      =render :partial => "shop", :locals => {:shop => @shop}

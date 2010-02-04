@@ -11,8 +11,14 @@ class CreateProducts < ActiveRecord::Migration
       t.int :items_in_stock
       t.string :warranty
 
+      t.integer :brand_id
+      t.integer :shop_id
+      t.integer :category_id
+
       t.timestamps
     end
+
+    add_index :products, :model
   end
 
   def self.down

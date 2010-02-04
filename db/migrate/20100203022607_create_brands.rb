@@ -8,6 +8,7 @@ class CreateBrands < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :brands, :name, :unique => true
   end
 
   def self.down

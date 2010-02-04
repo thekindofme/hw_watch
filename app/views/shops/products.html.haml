@@ -1,0 +1,9 @@
+%h2 Products found in #{@shop.name}
+-if @products.empty?
+  %p No products found... something is wrong i guess?!
+-else
+  %p We have #{@products.size} product(s)
+  %div.products
+    -@products.each do |product|
+      -@product=product
+      =render :partial => 'shared/product', :locals => {:product => @product}
