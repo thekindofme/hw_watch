@@ -6,4 +6,4 @@
   %div.products
     -@products.each do |product|
       -@product=product
-      =render :partial => 'shared/product', :locals => {:product => @product}
+      =render :partial => 'product', :locals => {:product => @product}

@@ -2,8 +2,11 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users, :admin
   map.resources :home, :only => :index
   map.resource :user
-  map.resources :admins, :products
-  map.resources :shops, :has_many => [:products, :brands]
+  map.resources :admins
+  map.resources :products, :has_one => [:brand, :shop, :category]
+  map.resources :shops, :has_many => [:products, :brands, :categories]
+  map.resources :brands, :has_many => [:products, :shops, :categories]
+  map.resources :categories, :has_many => [:products, :shops, :brands]
 
   # The priority is based upon order of creation: first created -> highest priority.
 

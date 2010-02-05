@@ -1,13 +1,15 @@
 %div.product
   %p=link_to @product.model, product_path(@product)
-  %p image:
   %img{:src => @product.image_url}
   %p model:   #{@product.model}
   %p description:    #{@product.description}
   %p price:       #{@product.price}
-  %p shop:       #{@shop.name}
-  %p category:    #{@product.category}
-  %p brand:       #{@brand.name}
+  -if @product.shop
+    %p shop:       #{@product.shop.name}
+  -if @product.category
+    %p category:    #{@product.category.name}
+  -if @product.brand
+    %p brand:       #{@product.brand.name}
   %p in_stock:       #{@product.in_stock}
   %p sku:       #{@product.sku}
   %p warranty:       #{@product.warranty}

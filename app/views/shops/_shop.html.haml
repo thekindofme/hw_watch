@@ -5,3 +5,5 @@
   %p tel:       #{@shop.tel1}/#{@shop.tel2}
   %p www:       #{@shop.www_link}
   %p www shop:  #{@shop.shop_link}
+  %p=link_to "find products in this shop", shop_products_path(@shop)
+  %p=link_to "find brands in this shop", shop_brands_path(@shop)

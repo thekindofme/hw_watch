@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop=Shop.find(params[:id])
+    find_and_set_shop
   end
 
   def brands
@@ -27,7 +27,7 @@ class ShopsController < ApplicationController
   end
 
   def edit
-    @shop=Shop.find(params[:id])
+    find_and_set_shop
   end
 
   def update
@@ -44,6 +44,15 @@ class ShopsController < ApplicationController
   def destroy
     Shop.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Shop."
+  end
+
+  private
+  def find_and_set_shop
+    if params[:product_id]
+      @shop=Product.find(params[:product_id]).shop
+    else
+      @shop=Shop.find(params[:id])
+    end
   end
 
 end
