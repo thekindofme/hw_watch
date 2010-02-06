@@ -1,5 +1,8 @@
 class BrandsController < ApplicationController
+  before_filter :authenticate_admin!, :only => ["edit", "new", "create", "update", "destroy"]
+
   def new
+    @brand=Brand.new
   end
 
   def create
@@ -13,6 +16,8 @@ class BrandsController < ApplicationController
   end
 
   def destroy
+    Brand.find(params[:id]).destroy
+    flash[:notice] = "Successfully removed Brand."
   end
 
   def show
@@ -20,9 +25,10 @@ class BrandsController < ApplicationController
   end
 
   def index
+    @brands=Brand.all
   end
 
-private
+  private
   def find_and_set_brand
     if params[:product_id]
       @brand=Product.find(params[:product_id]).brand

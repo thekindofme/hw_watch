@@ -1,2 +1,9 @@
-<h1>Brands#index</h1>
-<p>Find me in app/views/brands/index.html.erb</p>
+%h2 Brands Listing
+-if @brands.empty?
+  %p No brands found... something is wrong i guess?!
+-else
+  %p We have #{@brands.size} brands(s)
+  %div.brands
+    -@brands.each do |brand|
+      -@brand=brand
+      =render :partial => 'brand', :locals => {:brand => @brand}

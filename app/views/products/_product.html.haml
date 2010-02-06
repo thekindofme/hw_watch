@@ -5,11 +5,11 @@
   %p description:    #{@product.description}
   %p price:       #{@product.price}
   -if @product.shop
-    %p shop:       #{@product.shop.name}
+    %p shop:    #{link_to @product.shop.name, product_shop_path(@product)}
   -if @product.category
-    %p category:    #{@product.category.name}
+    %p category:    #{link_to @product.category.name, product_category_path(@product)}
   -if @product.brand
-    %p brand:       #{@product.brand.name}
+    %p brand:    #{link_to @product.brand.name, product_brand_path(@product)}
   %p in_stock:       #{@product.in_stock}
   %p sku:       #{@product.sku}
   %p warranty:       #{@product.warranty}

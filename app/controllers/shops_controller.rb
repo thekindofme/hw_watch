@@ -1,6 +1,14 @@
 class ShopsController < ApplicationController
+  before_filter :authenticate_admin!, :only => ["edit", "new", "create", "update", "destroy"]
+  
   def index
-    @shops = Shop.all
+    if params[:brand_id]
+      @shops=Brand.find(params[:brand_id]).shops
+    elsif params[:category_id]
+      @shops=Category.find(params[:category_id]).shops
+    else
+      @shops=Shop.all
+    end
   end
 
   def show

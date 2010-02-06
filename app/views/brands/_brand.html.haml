@@ -1,0 +1,7 @@
+%div.brand
+  %p=link_to @brand.name, brand_path(@brand)
+  %img{:src => @brand.image_url}
+  %p description:    #{@brand.description}
+  %p www_link:       #{@brand.www_link}
+  %p=link_to "find products from this brand", brand_products_path(@brand)
+  %p=link_to "find shops selling products from this brand", brand_shops_path(@brand)
