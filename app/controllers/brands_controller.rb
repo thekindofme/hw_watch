@@ -28,6 +28,14 @@ class BrandsController < ApplicationController
     @brands=Brand.all
   end
 
+  protected
+  def navigation_for_index
+    if admin_signed_in?
+      @context_sensitive_navigation=[]
+      @context_sensitive_navigation << {:text => "Add", :link => new_brand_path}
+    end
+  end
+
   private
   def find_and_set_brand
     if params[:product_id]

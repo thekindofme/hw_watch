@@ -1,0 +1,26 @@
+#navigation
+  %list#main_navigation
+    %li=link_to 'Home', root_path
+    - unless user_or_admin_logged_in?
+      %li=link_to 'Admin', new_admin_session_path
+      %li=link_to 'Log in', new_user_session_path
+      %li=link_to 'Sign up', new_user_path
+    - if admin_signed_in?
+      #admin_login_box
+        %li=link_to('Admin section', admins_path)
+    - if user_signed_in?
+      #user_login_box
+        %li=link_to('My info', edit_user_path)
+    - if user_or_admin_logged_in?
+      #main_main
+        %li=link_to_unless_current "Shops", { :controller => 'shops'}
+        %li=link_to_unless_current "Products", { :controller => 'products'}
+        %li=link_to_unless_current "Brands", { :controller => 'brands'}
+        %li=link_to_unless_current "Categories", { :controller => 'categories'}
+        %li=link_to('Sign out', current_user_session_destroy_path)
+
+  -if @context_sensitive_navigation
+    %list#context_sensitive_navigation
+      -@context_sensitive_navigation.each do |nav_item|
+        %li=link_to nav_item[:text], nav_item[:link]
+

@@ -1,6 +1,6 @@
 class ShopsController < ApplicationController
   before_filter :authenticate_admin!, :only => ["edit", "new", "create", "update", "destroy"]
-  
+
   def index
     if params[:brand_id]
       @shops=Brand.find(params[:brand_id]).shops
@@ -52,6 +52,14 @@ class ShopsController < ApplicationController
   def destroy
     Shop.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Shop."
+  end
+
+    protected
+  def navigation_for_index
+    if admin_signed_in?
+      @context_sensitive_navigation=[]
+      @context_sensitive_navigation << {:text => "Add", :link => new_shop_path}
+    end
   end
 
   private
