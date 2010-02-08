@@ -8,7 +8,7 @@ namespace :hw_watch do
         s.description = "#{number} description"
         s.save
       end
-      puts "created 40 categories"
     end
+    puts "created 40 categories"
   end
 end

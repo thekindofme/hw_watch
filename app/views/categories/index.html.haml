@@ -2,8 +2,9 @@
 -if @categories.empty?
   %p No categories found... something is wrong i guess?!
 -else
-  %p We have #{@categories.size} shop(s)
+  %p We have #{@categories_count} shop(s)
   %div.categories
     -@categories.each do |category|
       -@category=category
       =render :partial => "category", :locals => {:category => @category}
+    %div.pagination=will_paginate @categories

@@ -3,7 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :home, :only => :index
   map.resource :user
   map.resources :admins
-  map.resources :products, :has_one => [:brand, :shop, :category]
+  map.resources :products, :has_one => [:brand, :category], :has_many => [:shops]
   map.resources :shops, :has_many => [:products, :brands, :categories]
   map.resources :brands, :has_many => [:products, :shops, :categories]
   map.resources :categories, :has_many => [:products, :shops, :brands]

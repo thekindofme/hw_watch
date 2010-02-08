@@ -25,7 +25,16 @@ class BrandsController < ApplicationController
   end
 
   def index
-    @brands=Brand.all
+    if params[:shop_id]
+      @brands=Shop.find(params[:shop_id]).brands
+    elsif params[:category_id]
+      @brands=Category.find(params[:category_id]).brands
+    else
+      @brands=Brand.all
+    end
+
+    @brands_count=@brands.size
+    @brands=@brands.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end
 
   protected

@@ -6,9 +6,14 @@ class ShopsController < ApplicationController
       @shops=Brand.find(params[:brand_id]).shops
     elsif params[:category_id]
       @shops=Category.find(params[:category_id]).shops
+    elsif params[:product_id]
+      @shops=Product.find(params[:product_id]).shops
     else
       @shops=Shop.all
     end
+    
+    @shops_count=@shops.size
+    @shops=@shops.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end
 
   def show

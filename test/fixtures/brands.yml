@@ -1,13 +1,23 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  name: MyString
-  image_url: MyString
-  www_link: MyString
-  description: MyString
+  name: Asus
+  image_url: http://mostlynerdy.files.wordpress.com/2009/12/asus-motherboard-launch.jpg
+  www_link: http://www.asus.com
+  description:  ASUS comes from the last four letters of Pegasus, the winged horse in Greek mythology that represents the inspiration of art and learning. ASUS embodies the strength, creative spirit and purity symbolized by this regal and agile mythical creature, soaring to new heights of quality and innovation with each product it introduces to the market.
 
 two:
-  name: MyString
-  image_url: MyString
-  www_link: MyString
-  description: MyString
+  name: Foxconn
+  image_url: http://www.foxconn.com/images/HH-WEB.gif
+  www_link: http://www.foxconn.com
+  description: Guided by a belief that the electronics products would be an integral part of everyday life in every office and in every home, Terry Gou founded Hon Hai Precision Industry Company Ltd., the anchor company of Foxconn Technology Group in 1974 with US$7,500, a devotion in integrating expertise for mechanical and electrical parts and an uncommon concept to provide the lowest "total cost" solution to increase the affordability of electronics products for all mankind.
+
+three:
+  name: HeTheWomanBrand
+  image_url: http://www.foxconn.com/images/HH-WEB.gif
+  www_link: http://www.hethewoman.com
+  description: This is the simplest brand on this world
+
+four:
+  name: Agonixing
+  image_url: http://www.foxconn.com/images/HH-WEB.gif
+  www_link: http://www.metreomatch.com
+  description: The best motherboard under one roof inside metroes all around the world.

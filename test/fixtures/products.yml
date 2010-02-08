@@ -1,23 +1,76 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  model: MyString
-  price: 9.99
-  description: MyString
-  url: MyString
-  image_url: MyString
-  sku: MyString
-  in_stock: false
-  items_in_stock: 
-  warranty: MyString
+  model: HugeBoard MX2d3 motherboard
+  price: 7962.21
+  description: The largest ever motherboard your money can buy
+  url: http://www.somesite.com/hugeboard/link/java/spring.do
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: LLK9876939492
+  in_stock: true
+  items_in_stock: 41
+  warranty: 2 years tricky warrenty... ;)
 
 two:
-  model: MyString
-  price: 9.99
+  model: The nest keyboard ever
+  price: 342.99
   description: MyString
-  url: MyString
-  image_url: MyString
-  sku: MyString
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: IUD76929234
+  in_stock: true
+  items_in_stock:  12
+  warranty:  2 years tricky warrenty... ;)
+
+two:
+  model: 26 inch LCD MD212
+  price: 552.99
+  description: MyString
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: LDF78923434
   in_stock: false
-  items_in_stock: 
-  warranty: MyString
+  items_in_stock: 51
+  warranty: 2 years tricky warrenty... ;)
+
+two:
+  model: 21 inch lcd screen
+  price: 9.99
+  description: this is the cheapest lcd ever
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: LJGD977793
+  in_stock: true
+  items_in_stock: 12
+  warranty: 2 years tricky warrenty... ;)
+
+two:
+  model: SXome fancy product
+  price: 679.12
+  description: la ala lsdf you know whatever can be here ok...
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: UDG9779629234
+  in_stock: ture
+  items_in_stock: 121
+  warranty: 2 years tricky warrenty... ;)
+
+two:
+  model: Intel's SSD
+  price: 9926.2
+  description: The best SSD for the money
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: DFO7969787986
+  in_stock: ture
+  items_in_stock: 52
+  warranty: 2 years tricky warrenty... ;)
+
+two:
+  model: Xtream cooler pro MCDE24124
+  price: 217.51
+  description: this does the cooling right
+  url: http://www.newegg.com/Product/Product.aspx?Item=N82E16820227393
+  image_url: http://images17.newegg.com/is/image/newegg/34-115-675-TS?$S180W$&t=0206080
+  sku: DFV699124124
+  in_stock: true
+  items_in_stock: 32
+  warranty: 2 years tricky warrenty... ;)

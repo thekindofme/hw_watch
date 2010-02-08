@@ -9,7 +9,7 @@ namespace :hw_watch do
         s.www_link = "http://www.#{s.name}.com"
         s.save
       end
-      puts "created 20 brands"
     end
+    puts "created 20 brands"
   end
 end

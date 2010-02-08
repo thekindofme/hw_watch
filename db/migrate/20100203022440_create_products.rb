@@ -8,7 +8,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :image_url
       t.string :sku
       t.boolean :in_stock
-      t.int :items_in_stock
+      t.integer :items_in_stock
       t.string :warranty
 
       t.integer :brand_id

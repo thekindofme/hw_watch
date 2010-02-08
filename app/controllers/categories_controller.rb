@@ -25,6 +25,9 @@ class CategoriesController < ApplicationController
     else
       @categories=Category.all
     end
+
+    @categories_count=@categories.size
+    @categories=@categories.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end
 
   def edit

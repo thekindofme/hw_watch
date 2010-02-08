@@ -1,19 +1,19 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  name: MyString
-  description: MyString
-  address: MyString
-  tele1: MyString
-  tele2: MyString
-  rating: 
-  link: MyString
+  name: GF Banda and the cheaters
+  #description: we sell all the best stuff from all around the world for crazy high prices!
+  address: 21A, Frara street, jamdro pedesa, colombo 21
+  tel1: 029-241-124115
+  tel2: 891-512-215125
+  rating: 4/10
+  www_link: http://ar.rubyonrails.org/
+  shop_link: http://ar.rubyonrails.org/
 
 two:
-  name: MyString
-  description: MyString
-  address: MyString
-  tele1: MyString
-  tele2: MyString
-  rating: 
-  link: MyString
+  name: Sunimal Perrea and stores
+  #description: ape badu nam loweth na sir!
+  address: 8 FA Street, middle of a earthquake, hatoon.
+  tel1: 891-324-215125
+  tel2: 491-512-151212
+  rating: 6/10
+  www_link: http://ar.rubyonrails.org/
+  shop_link: http://ar.rubyonrails.org/

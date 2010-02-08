@@ -13,7 +13,7 @@ namespace :hw_watch do
         s.tel2 = rand(986792192).to_s[0..10]
         s.save
       end
-      puts "created 40 shops"
     end
+    puts "created 40 shops"
   end
 end

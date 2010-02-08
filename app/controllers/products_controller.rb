@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
     else
       @products=Product.all
     end
+
+    @products_count=@products.size
+    @products=@products.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
   end
 
   def show

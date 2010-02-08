@@ -1,9 +1,15 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
 one:
-  name: MyString
-  description: MyString
+  name: Motherboards
+  description: Motherboards are one of the core componants in a PC
 
 two:
-  name: MyString
-  description: MyString
+  name: Processors
+  description: Heart of any PC
+
+three:
+  name: Hard Disks
+  description: Where most of your data lives.
+
+four:
+  name: Sound Cards
+  description: If you are serious about what you hear, then you need one of these.

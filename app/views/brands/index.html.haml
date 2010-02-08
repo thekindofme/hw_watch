@@ -2,8 +2,9 @@
 -if @brands.empty?
   %p No brands found... something is wrong i guess?!
 -else
-  %p We have #{@brands.size} brands(s)
+  %p We have #{@brands_count} brands(s)
   %div.brands
     -@brands.each do |brand|
       -@brand=brand
       =render :partial => 'brand', :locals => {:brand => @brand}
+    %div.pagination=will_paginate @brands

@@ -4,8 +4,7 @@
   %p model:   #{@product.model}
   %p description:    #{@product.description}
   %p price:       #{@product.price}
-  -if @product.shop
-    %p shop:    #{link_to @product.shop.name, product_shop_path(@product)}
+  %p=link_to "find shops selling this product", product_shops_path(@product)
   -if @product.category
     %p category:    #{link_to @product.category.name, product_category_path(@product)}
   -if @product.brand

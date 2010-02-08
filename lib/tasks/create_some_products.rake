@@ -6,7 +6,6 @@ namespace :hw_watch do
       Product.create! do |s|
         s.model = "Product#{number}"
         s.brand_id = rand(10)
-        s.shop_id = rand(40)
         s.category_id = rand(20)
         s.url = "http://shop.#{s.model}.com"
         s.description = "description for #{s.model}"
@@ -17,7 +16,7 @@ namespace :hw_watch do
         s.warranty = "1 year"
         s.save
       end
-      puts "created 40 products"
     end
+    puts "created 400 products"
   end
 end
