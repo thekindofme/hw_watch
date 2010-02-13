@@ -47,7 +47,7 @@ class ShopsController < ApplicationController
     @shop=Shop.find(params[:id])
     if @shop.update_attributes(params[:shop])
       flash[:notice] = "Successfully updated Shop."
-      redirect_to :action => "index"
+      redirect_to :action => "show", :id => params[:id]
     else
       flash[:notice] = "Something is wrong with your input, please recheck"
       render 'edit'

@@ -1,1 +1,4 @@
 #brand= render :partial => "brand", :locals => {:brand => @brand}
+#sub_menu
+  %p=link_to "Edit", edit_brand_path(@brand)
+  %p=link_to "Destroy", brand_path(@brand), :confirm => 'Are you sure?', :method => :delete

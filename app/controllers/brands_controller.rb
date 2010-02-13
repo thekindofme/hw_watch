@@ -13,6 +13,14 @@ class BrandsController < ApplicationController
   end
 
   def update
+    @brand=Brand.find(params[:id])
+    if @brand.update_attributes(params[:brand])
+      flash[:notice] = "Successfully updated brand."
+      redirect_to :action => "show", :id => params[:id]
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      render 'edit'
+    end
   end
 
   def destroy

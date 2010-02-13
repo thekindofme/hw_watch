@@ -1,2 +1,2 @@
-<h1>Product#edit</h1>
-<p>Find me in app/views/product/edit.html.erb</p>
+%h3 Edit #{@product.model}
+#product= render :partial => "form"#, :locals => {:product => @product}

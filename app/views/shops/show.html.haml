@@ -1,1 +1,4 @@
 #shop= render :partial => "shop", :locals => {:shop => @shop}
+#sub_menu
+  %p=link_to "Edit", edit_shop_path(@shop)
+  %p=link_to "Destroy", shop_path(@shop), :confirm => 'Are you sure?', :method => :delete

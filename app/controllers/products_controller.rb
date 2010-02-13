@@ -32,6 +32,14 @@ class ProductsController < ApplicationController
   end
 
   def update
+    @product=Product.find(params[:id])
+    if @product.update_attributes(params[:product])
+      flash[:notice] = "Successfully updated product."
+      redirect_to :action => "show", :id => params[:id]
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      render 'edit'
+    end
   end
 
   def destroy

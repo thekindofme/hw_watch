@@ -1,1 +1,4 @@
-#product= render :partial => "product", :locals => {:product => @product}
+#product= render :partial => "product", :locals => {:product => @product, :js => 122}
+#sub_menu
+  %p=link_to "Edit", edit_product_path(@product)
+  %p=link_to "Destroy", product_path(@product), :confirm => 'Are you sure?', :method => :delete

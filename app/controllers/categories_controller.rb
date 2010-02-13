@@ -35,6 +35,14 @@ class CategoriesController < ApplicationController
   end
 
   def update
+    @category=Category.find(params[:id])
+    if @category.update_attributes(params[:category])
+      flash[:notice] = "Successfully updated category."
+      redirect_to :action => "show", :id => params[:id]
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      render 'edit'
+    end
   end
 
   protected

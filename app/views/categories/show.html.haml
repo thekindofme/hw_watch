@@ -1,1 +1,4 @@
 #category= render :partial => "category", :locals => {:category => @category}
+#sub_menu
+  %p=link_to "Edit", edit_category_path(@category)
+  %p=link_to "Destroy", category_path(@category), :confirm => 'Are you sure?', :method => :delete
