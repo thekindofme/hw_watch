@@ -57,6 +57,7 @@ class ShopsController < ApplicationController
   def destroy
     Shop.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Shop."
+    redirect_to :action => "index"
   end
 
     protected

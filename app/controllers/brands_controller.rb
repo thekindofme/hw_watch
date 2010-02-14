@@ -6,6 +6,14 @@ class BrandsController < ApplicationController
   end
 
   def create
+    @brand=Brand.new(params[:brand])
+    if @brand.save
+      flash[:notice] = "Successfully created the new Brand."
+      redirect_to :action => "show", :id => @brand.id
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      render 'new'
+    end
   end
 
   def edit
@@ -26,6 +34,7 @@ class BrandsController < ApplicationController
   def destroy
     Brand.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Brand."
+    redirect_to :action => "index"
   end
 
   def show

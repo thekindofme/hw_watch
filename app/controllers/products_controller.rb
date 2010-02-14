@@ -29,6 +29,16 @@ class ProductsController < ApplicationController
   end
 
   def create
+    #TODO: make it possible to select shops that sell this product
+    @product=Product.new(params[:product])
+    if @product.save
+      flash[:notice] = "Successfully created the new Product."
+      redirect_to :action => "show", :id => @product.id
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      #render :text =>  @product.errors.each_full { |msg| puts msg }
+      render 'new'
+    end
   end
 
   def update
@@ -45,6 +55,7 @@ class ProductsController < ApplicationController
   def destroy
     Product.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Product."
+    redirect_to :action => "index"
   end
 
   def import

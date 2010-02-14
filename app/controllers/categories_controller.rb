@@ -6,6 +6,14 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    @category=Category.new(params[:category])
+    if @category.save
+      flash[:notice] = "Successfully created the new Category."
+      redirect_to :action => "show", :id => @category.id
+    else
+      flash[:notice] = "Something is wrong with your input, please recheck"
+      render 'new'
+    end
   end
 
   def show
@@ -15,6 +23,7 @@ class CategoriesController < ApplicationController
   def destroy
     Category.find(params[:id]).destroy
     flash[:notice] = "Successfully removed Category."
+    redirect_to :action => "index"
   end
 
   def index
