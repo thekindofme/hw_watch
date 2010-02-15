@@ -58,19 +58,11 @@ class ProductsController < ApplicationController
     redirect_to :action => "index"
   end
 
-  def import
-    # code here
-  end
-
-  def doimport
-
-  end
-
   protected
   def navigation_for_index
     if admin_signed_in?
       @context_sensitive_navigation=[]
-      @context_sensitive_navigation << {:text => "Import", :link => url_for(:action => :import) }
+      #@context_sensitive_navigation << {:text => "Import", :link => url_for(:action => :import) }
       @context_sensitive_navigation << {:text => "Add", :link => new_product_path}
     end
   end

@@ -2,7 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   map.devise_for :users, :admin
   map.resources :home, :only => :index
   map.resource :user
-  map.resources :admins
+
+  map.resources :admins, :collection => {:import => :get, :doimport => :put}
+
   map.resources :products, :has_one => [:brand, :category], :has_many => [:shops]
   map.resources :shops, :has_many => [:products, :brands, :categories]
   map.resources :brands, :has_many => [:products, :shops, :categories]

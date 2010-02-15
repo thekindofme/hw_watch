@@ -1,0 +1,7 @@
+%h2 Scrape the Web
+-form_tag(url_for(:action => :doimport), :method => "put") do
+ -@sites.each do |site|
+  =label_tag site
+  =check_box_tag site
+  %br
+ =submit_tag("Import")

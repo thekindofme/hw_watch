@@ -1,0 +1,3 @@
+[submodule "lib/price_grabber"]
+	path = lib/price_grabber
+	url = git@github.com:thekindofme/price_grabber.git
